@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            background-color: #ffdde1;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #d6336c;
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+        .question-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .question {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+        .question img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+            position: relative;
+        }
+        .btn {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+        }
+        .btn-yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        .btn-no {
+            background-color: #333;
+            color: white;
+            transition: all 0.2s ease-in-out;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            height: auto;
+            overflow: hidden;
+        }
+        .love-letter {
+            font-size: 1.2rem;
+            color: #333;
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .spotify-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine's Day, My Love! ❤️</h1>
+    <div class="question-container" id="question-container">
+        <img src="images/valentine-photo.jpg" alt="Cute Couple Photo">
+        <div class="question">Will you be my Valentine? 💖</div>
+    </div>
+    <div class="buttons">
+        <button class="btn btn-yes" onclick="showContent()">Yes</button>
+        <button class="btn btn-no" id="no-btn" onmouseover="moveNoButton()">No</button>
+    </div>
+    
+    <div id="content" class="hidden content-container">
+        <div class="love-letter">
+            <p>Dear Aashika,</p>
+            <p>my chakkudu takkudu kukudu i am so grateful for you being in my life, i am so lucky to have you as my girlfriend, i love you sooooo much dear you mean alot to me thank you so much for everything ummmmmmmaaaaaaa.Happy Valentine's Day! ❤️</p>
+            <p>Sincerely Vishnu</p>
+        </div>
+        <div class="gallery">
+            <img src="images/photo1.jpeg" alt="Our Moment 1">
+            <img src="images/photo2.jpeg" alt="Our Moment 2">
+            <img src="images/photo3.jpeg" alt="Our Moment 3">
+        </div>
+        <div class="spotify-container">
+            <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/track/0b83L1ToHRiwlpmUAjiCHc" 
+                    width="300" height="80" frameborder="0" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            </iframe>
+        </div>
+    </div>
+    
+    <script>
+        function showContent() {
+            document.getElementById('content').classList.remove('hidden');
+            document.getElementById('question-container').classList.add('hidden');
+        }
+        function moveNoButton() {
+            const btn = document.getElementById('no-btn');
+            const x = Math.random() * 40 - 20; // Small movement range
+            const y = Math.random() * 40 - 20;
+            btn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+    </script>
+</body>
+</html>
